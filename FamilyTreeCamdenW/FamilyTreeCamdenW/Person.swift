@@ -11,11 +11,9 @@ struct Person {
     let id: Int
     let firstName: String
     let lastName: String
-    let spouseID: Int
-    let bloodRelative: Bool
+    let spouseID: Int?
     let birthDate: Date
-    let parentID: Int
-    let childrenIDs: [Int]
+    let parentIDs: [Int]
     let maidenName: String?
     
     var image: UIImage {

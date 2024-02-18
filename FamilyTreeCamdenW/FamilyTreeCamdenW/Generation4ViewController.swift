@@ -14,14 +14,7 @@ class Generation4TableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        for childID in parentOfChild.childrenIDs {
-            guard let matchingChild = Family.familyMembers.first(where: { $0.id == childID }) else {
-                return
-            }
-            print("Adding person ID \(childID) to currentGeneration")
-            print("Matching children: \(matchingChild)")
-            currentGeneration.append(matchingChild)
-        }
+        currentGeneration = findChildren(for: parentOfChild)
     }
     
     required init?(coder: NSCoder) { fatalError("This should never be called!") }
