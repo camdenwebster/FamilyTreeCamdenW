@@ -19,7 +19,7 @@ enum Family {
         Person(id: 8, firstName: "Judy", lastName: "Smith", spouseID: 7, birthDate: Date(timeIntervalSince1970: 225125230), parentIDs: [0], maidenName: "Jackson"),
         Person(id: 9, firstName: "Tom", lastName: "Smith", spouseID: nil, birthDate: Date(timeIntervalSince1970: 631152000), parentIDs: [7, 8], maidenName: nil),
         Person(id: 10, firstName: "Nancy", lastName: "Smith", spouseID: nil, birthDate: Date(timeIntervalSince1970: -469185170), parentIDs: [4, 6], maidenName: nil),
-        Person(id: 11, firstName: "Jim", lastName: "Smith", spouseID: nil, birthDate: Date(timeIntervalSince1970: 319733230), parentIDs: [3, 5], maidenName: nil)
+        Person(id: 11, firstName: "Jim", lastName: "Smith", spouseID: nil, birthDate: Date(timeIntervalSince1970: -626951570), parentIDs: [3, 5], maidenName: nil)
     ]
     
 }
