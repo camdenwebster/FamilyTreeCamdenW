@@ -6,7 +6,7 @@
 //
 import UIKit
 
-// MARK:- Family
+// MARK: Family
 enum Family {
     static let familyMembers: [Person] = [
         Person(id: 1, firstName: "John", lastName: "Smith", spouseID: 2, birthDate: Date(timeIntervalSince1970: -2835940370), parentIDs: [0], maidenName: "none"),
@@ -21,9 +21,9 @@ enum Family {
         Person(id: 10, firstName: "Nancy", lastName: "Smith", spouseID: nil, birthDate: Date(timeIntervalSince1970: -469185170), parentIDs: [4, 6], maidenName: nil),
         Person(id: 11, firstName: "Jim", lastName: "Smith", spouseID: nil, birthDate: Date(timeIntervalSince1970: -626951570), parentIDs: [3, 5], maidenName: nil)
     ]
-    
 }
 
+// MARK: Helper methods
 func formatBirthDate(_ birthDate: Date) -> String {
     let formatter = DateFormatter()
     formatter.dateFormat = "yyyy-MM-dd"
@@ -46,7 +46,6 @@ func findChildren(for familyMember: Person) -> [Person] {
     }
     return matchingChildren
 }
-
 
 func findSpouseName(_ familyMember: Person) -> String {
     var spouseString: String
