@@ -11,17 +11,17 @@ class Generation1TableViewController: UITableViewController {
 
     var family = [Person]()
     let greatGrandParent = Family.familyMembers[0]
-    var generation1 = [Person]()
+    var currentGeneration = [Person]()
     
     @IBSegueAction func ShowGeneration2(_ coder: NSCoder) -> Generation2TableViewController? {
         guard let indexPath = tableView.indexPathForSelectedRow else { fatalError("Nothing seleted!")}
-        let parentOfChild = generation1[indexPath.row]
+        let parentOfChild = currentGeneration[indexPath.row]
         return Generation2TableViewController(coder: coder, parentOfChild: parentOfChild)
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        generation1.append(greatGrandParent)
+        currentGeneration.append(greatGrandParent)
     }
     
     // MARK: - Table view data source
@@ -39,15 +39,15 @@ class Generation1TableViewController: UITableViewController {
         else { fatalError("Could not create custom name cell")}
         
         // Set up the name label string
-        let fullName = "\(greatGrandParent.firstName) \(greatGrandParent.lastName)"
+        let fullName = "\(currentGeneration[indexPath.row].firstName) \(currentGeneration[indexPath.row].lastName)"
         cell.nameLabel?.text = fullName
         
         // Set up the spouse label string
-        cell.spouse.text = findSpouseName(greatGrandParent)
+        cell.spouse.text = findSpouseName(currentGeneration[indexPath.row])
         
         // Set up birthdate string
-        cell.birthDate.text = "Born: \(formatBirthDate(greatGrandParent.birthDate))"
-        cell.thumbnail.image = greatGrandParent.image
+        cell.birthDate.text = "Born: \(formatBirthDate(currentGeneration[indexPath.row].birthDate))"
+        cell.thumbnail.image = currentGeneration[indexPath.row].image
         return cell
     }
     
