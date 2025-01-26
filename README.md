@@ -1,4 +1,6 @@
 # Family Tree
+This project served as a learning exercise for UITableViewController in UIKit.
+
 ## Ingredients
 * `Person` struct
 	* Attributes:
